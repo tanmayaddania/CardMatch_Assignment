@@ -21,12 +21,12 @@ public class SceneLoader : MonoBehaviour
         {
             Instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
     }
 
     void Start()
     {
-        StartCoroutine(DisableIfSceneLoaded());
+        //StartCoroutine(DisableIfSceneLoaded());
     }
 
     public async void LoadScene()
@@ -34,7 +34,7 @@ public class SceneLoader : MonoBehaviour
         var scene = SceneManager.LoadSceneAsync(1);
         loaderPanel.SetActive(true);
 
-        loadingSlider.value = 0f;
+        /*loadingSlider.value = 0f;
 
         while (elapsedTime < loadingTime)
         {
@@ -44,11 +44,11 @@ public class SceneLoader : MonoBehaviour
         }
 
         // Once the slider reaches the end, allow scene activation
-        scene.allowSceneActivation = true;
         sceneloaded = true;
+        scene.allowSceneActivation = true;*/
     }
 
-    public IEnumerator DisableIfSceneLoaded()
+   /* public IEnumerator DisableIfSceneLoaded()
     {
         while (!sceneloaded)
         {
@@ -56,5 +56,5 @@ public class SceneLoader : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
         loaderPanel.SetActive(false);
-    }
+    }*/
 }

@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI movesText;
+    [SerializeField] private TextMeshProUGUI gameoverText;
+    [SerializeField] private GameObject gameoverPanel;
 
     private List<Card> cards = new List<Card>();
     private Dictionary<CardType, Sprite> frontSpriteMap;
@@ -175,6 +177,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log($"Game Over! You won in {moves} moves!");
+        gameoverPanel.SetActive(true);
+        gameoverText.text = $"Game Over! You won in {moves} moves!";
     }
 }
