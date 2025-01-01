@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
     {
         List<CardType> types = new List<CardType>();
 
-        // Add pairs of each card type
+        // Add pairs
         for (int i = 0; i < pairsCount; i++)
         {
             CardType type = (CardType)i;
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
             types.Add(type);
         }
 
-        // Fisher-Yates shuffle
+        // shuffle
         for (int i = types.Count - 1; i > 0; i--)
         {
             int j = Random.Range(0, i + 1);
@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
         {
             return sprite;
         }
-        Debug.LogError($"No sprite found for card type: {type}");
+        Debug.LogError($"No sprite found: {type}");
         return null;
     }
 
@@ -176,6 +176,5 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         Debug.Log($"Game Over! You won in {moves} moves!");
-        // Add your game over logic here
     }
 }
