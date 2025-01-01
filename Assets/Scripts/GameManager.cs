@@ -18,8 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<CardData> cardFrontSprites;
 
     [Header("UI References")]
-    [SerializeField] private Text scoreText;
-    [SerializeField] private Text movesText;
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI movesText;
 
     private List<Card> cards = new List<Card>();
     private Dictionary<CardType, Sprite> frontSpriteMap;
@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
     private void UpdateUI()
     {
         if (scoreText != null)
-            scoreText.text = $"Score: {score}/{pairsCount}";
+            scoreText.text = $"Score: {score}";
         if (movesText != null)
             movesText.text = $"Moves: {moves}";
     }
